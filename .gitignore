@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#files
+/src/files/GoogleNews-vectors-negative300.bin
+/src/files/PROMISE_exp.csv
