@@ -17,12 +17,10 @@ class ClassificationApp:
             label = Classification().classify(v_requirement)
             classified_requirements.update(
                 {
-                    text: label
+                   "description": text,
+                    "category": label,
                 }
             )
+        return classified_requirements
 
-# {
-#     "description": "requirement text 1",
-#     "category": "NF",
-#     "subcategory": "SE"
-# }
+
