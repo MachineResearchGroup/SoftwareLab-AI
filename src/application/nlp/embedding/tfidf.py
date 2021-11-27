@@ -2,6 +2,7 @@ from embedding_interface import EmbeddingInterface
 from sklearn.feature_extraction.text import TfidfVectorizer
 from dataclasses import dataclass
 
+
 @dataclass
 class Tfidf(EmbeddingInterface):
     """"""
@@ -12,7 +13,7 @@ class Tfidf(EmbeddingInterface):
         self.vectorizer.fit(tokens)
 
     def vectorize(self, tokens: list):
-        return self.vectorizer.transform(tokens)
+        return self.vectorizer.fit_transform(tokens)
 
     def key_words(self):
         return self.vectorizer.get_feature_names_out()

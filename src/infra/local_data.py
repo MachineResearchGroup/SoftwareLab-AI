@@ -1,5 +1,6 @@
 import csv
 import numpy
+import joblib
 import pandas as pd
 from scipy import sparse
 from gensim.models import Word2Vec
@@ -55,4 +56,12 @@ def get_word2vec_model(file_name: str):
 
 
 def export_word2vec_model(model):
-    model.save(__base_path+"model.model")
+    model.save(__base_path+"word2vec_model.model")
+
+
+def export_sklearn_model(model):
+    joblib.dump(model, __base_path+'sklearn_model.joblib')
+
+
+def get_sklearn_model(file_name: str):
+    joblib.load(file_name)
