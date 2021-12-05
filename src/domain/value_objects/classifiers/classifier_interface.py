@@ -5,8 +5,8 @@ from skopt.space import Real, Categorical, Integer
 @dataclass
 class ClassifierInterface:
 
-    name: str
-    initials: str
-    model: object
-    instance: object
-    search_spaces: dict
+    name: str = None
+    initials: str = None
+    model: object = None
+    instance: object = None
+    search_spaces: dict = None

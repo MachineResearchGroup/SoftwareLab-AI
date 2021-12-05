@@ -1,6 +1,7 @@
 from application.nlp.embedding.embedding_interface import EmbeddingInterface
 from sklearn.feature_extraction.text import TfidfVectorizer
 from dataclasses import dataclass
+from typing import List
 
 
 @dataclass
@@ -9,8 +10,8 @@ class Tfidf(EmbeddingInterface):
 
     vectorizer: TfidfVectorizer
 
-    def fit(self, tokens: list):
-        self.vectorizer().fit(tokens)
+    def fit(self, tokens: List):
+        self.vectorizer.fit(tokens)
         return self.vectorizer
 
     def vectorize(self, tokens: list):

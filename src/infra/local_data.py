@@ -6,8 +6,8 @@ import pandas as pd
 from scipy import sparse
 from gensim.models import Word2Vec
 
-_base_path = './files/'
-_dataset_path = "./files/datasets/Rainbow_Dataset.csv"
+_base_path = '../../files/'
+_dataset_path = "../../files/datasets/Rainbow_Dataset.csv"
 
 
 def get_dataset():
@@ -65,12 +65,8 @@ def export_sklearn_model(model, file_name):
 
 
 def get_sklearn_model(file_name: str):
-    joblib.load(file_name)
+    return joblib.load(_base_path+file_name)
 
 
 def has_file(file_name) -> bool:
     return os.path.isfile(_base_path+file_name)
-
-
-# if __name__ == "__main__":
-#     print(os.path.isfile(_dataset_path))
