@@ -1,4 +1,4 @@
-from domain.nlp.embedding.embedding_interface import EmbeddingInterface
+from application.nlp.embedding.embedding_interface import EmbeddingInterface
 from infra import local_data
 import numpy as np
 

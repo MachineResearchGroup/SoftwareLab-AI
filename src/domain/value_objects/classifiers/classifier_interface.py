@@ -1,4 +1,3 @@
-import sklearn
 from dataclasses import dataclass
 from skopt.space import Real, Categorical, Integer
 

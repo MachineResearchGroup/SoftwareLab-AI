@@ -5,5 +5,5 @@ from dataclasses import dataclass
 class EmbeddingInterface:
     """"""
 
-    def vectorize():
+    def vectorize(tokesn: list):
         pass
