@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import logging
 from infra.local_data import (get_dataset)
 from application.nlp.embedding import vectorizer
 from domain.value_objects.requirement import Requirement
@@ -17,13 +18,15 @@ class ClassificationApp:
     def run(self, requirement: Requirement) -> dict:
         classified_requirements = {}
         text = requirement.__getattribute__("text")
-        txt_preprocessing = TextPreprocessing().run(text)
-        txt_vectorized = vectorizer.run(self.embedding, txt_preprocessing)
+        txt_preprocessing = " ".join(TextPreprocessing().run(text))
+        logging.info(f"Text preprocessing: {txt_preprocessing}")
+        txt_vectorized = vectorizer.run(self.embedding, [txt_preprocessing])
+        logging.info(f"Text vectorized: {txt_vectorized}")
         label = self.classification.classify(txt_vectorized)
         classified_requirements.update(
             {
                 "description": text,
-                "category": label,
+                "category": label[0],
             }
         )
         return classified_requirements

@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+#Shell script
+*nohup.out
+
 # Distribution / packaging
 .Python
 build/
@@ -50,6 +53,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+out_*
 
 # Translations
 *.mo

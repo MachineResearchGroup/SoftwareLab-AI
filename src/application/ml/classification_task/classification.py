@@ -23,4 +23,4 @@ class Classification:
         optimized_model = optimization.get_optimized_model(
             self.classifier, x, y)
         export_sklearn_model(model=optimized_model,
-                             file_name="lr_model.joblib")
+                             file_name="models/lr_model.joblib")
